@@ -11,23 +11,23 @@ import pandas as pd
 import time
 
 # Parameters
-PR_REG_STRENGTH1 = 1.5 # lambda1
-PR_MIN_NN1 = 5 # K1: key parameter
+PR_REG_STRENGTH1 = 1.5 # lambda1  #1.5
+PR_MIN_NN1 = 5 # K1: key parameter #5
 
-PR_REG_STRENGTH2 = 25.  # 15. # lambda2: key parameter
-PR_MIN_NN2 = 20  # K2: key parameter
+PR_REG_STRENGTH2 = 30.  # 15. # lambda2: key parameter # 25.
+PR_MIN_NN2 = 20  # K2: key parameter #20
 
-PR_DECIMATE_RES1 = 0.01  # For speed optimization
-PR_DECIMATE_RES2 = 0.05  # For speed optimization
-PR_MAX_GAP = 1.5  # 2. # Max assumed point gap within a tree due to occlusion
+PR_DECIMATE_RES1 = 0.05  # For speed optimization #0.01
+PR_DECIMATE_RES2 = 0.1  # For speed optimization #0.05
+PR_MAX_GAP = 1.5  # 2. # Max assumed point gap within a tree due to occlusion #1.5
 
-PR_REL_HEIGHT_LENGTH_RATIO = 0.5  # rho
-PR_VERTICAL_WEIGHT = 0.5  # w
-PR_MIN_NN3 = 20  # trivial
-PR_SCORE_CANDIDATE_THRESH = 0.7  # No need to change
-PR_INIT_STEM_REL_LENGTH_THRESH = 1.5  # No need to change
+PR_REL_HEIGHT_LENGTH_RATIO = 0.5  # rho #0.5
+PR_VERTICAL_WEIGHT = 0.5  # w #0.5
+PR_MIN_NN3 = 20  # trivial #20
+PR_SCORE_CANDIDATE_THRESH = 0.7  # No need to change #0.7
+PR_INIT_STEM_REL_LENGTH_THRESH = 1.5  # No need to change #1.5
 
-PR_MAX_OUTLIER_GAP=3.2 # 3.0 #trivial: post-processing to remove isolated points with great gaps
+PR_MAX_OUTLIER_GAP=3.2 # 3.0 #trivial: post-processing to remove isolated points with great gaps #3.2
 
 silent = False
 cut_pursuit_silent = False
