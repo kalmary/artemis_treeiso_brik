@@ -29,8 +29,8 @@ PR_INIT_STEM_REL_LENGTH_THRESH = 1.5  # No need to change
 
 PR_MAX_OUTLIER_GAP=3.2 # 3.0 #trivial: post-processing to remove isolated points with great gaps
 
-silent = True
-cut_pursuit_silent = True
+silent = False
+cut_pursuit_silent = False
 
 def print_wFlag(text: str) -> None:
     if silent is not True:
@@ -38,7 +38,7 @@ def print_wFlag(text: str) -> None:
 
 
 # Try to import the C++ version first, fall back to Python if not available
-USE_CPP = False
+USE_CPP = True
 if USE_CPP:
     try:
         from cut_pursuit_py import perform_cut_pursuit
@@ -47,7 +47,7 @@ if USE_CPP:
     except ImportError as e:
         print(f"C++ implementation not available: {e}")
         try:
-            from treeiso.cut_pursuit_L0 import perform_cut_pursuit
+            from cut_pursuit_L0 import perform_cut_pursuit
             USE_CPP = False
             print_wFlag("Using Python implementation of Cut-Pursuit (slower)")
         except ImportError as e:
@@ -55,7 +55,7 @@ if USE_CPP:
             raise
 else:
     try:
-        from treeiso.cut_pursuit_L0 import perform_cut_pursuit
+        from cut_pursuit_L0 import perform_cut_pursuit
         USE_CPP = False
         print_wFlag("Using Python implementation of Cut-Pursuit (slower)")
     except ImportError as e:
