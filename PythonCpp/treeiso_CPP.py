@@ -15,7 +15,7 @@ PR_REG_STRENGTH1 = 1.5 # lambda1  #1.5
 PR_MIN_NN1 = 5 # K1: key parameter #5
 
 PR_REG_STRENGTH2 = 30.  # 15. # lambda2: key parameter # 25.
-PR_MIN_NN2 = 20  # K2: key parameter #20
+PR_MIN_NN2 = 30  # K2: key parameter #20
 
 PR_DECIMATE_RES1 = 0.05  # For speed optimization #0.01
 PR_DECIMATE_RES2 = 0.1  # For speed optimization #0.05
@@ -498,7 +498,7 @@ def isolate_gaps(pcd,max_gap,search_K=20):
 
     return labels
 
-def tree_isolator(pcd):
+def tree_isolator(pcd: np.ndarray) -> np.ndarray:
     print_wFlag('\n\n--- TREE SEGMENTATION ---')
 
     pcd = pcd - np.mean(pcd, axis=0)
